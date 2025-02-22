@@ -19,4 +19,10 @@ public class Hazard : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Trigger!");
+        p.Damage();
+    }
 }

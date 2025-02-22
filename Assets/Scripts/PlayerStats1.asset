@@ -15,5 +15,5 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   moveSpeed: 5
-  jumpForce: 7
+  jumpForce: 10
   gravity: -10

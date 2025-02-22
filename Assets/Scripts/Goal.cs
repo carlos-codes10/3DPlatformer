@@ -9,14 +9,10 @@ public class Goal : MonoBehaviour
         
     }
 
-    public void Play()
+    private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("Gameplay");
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
+        Debug.Log("Trigger!");
+        SceneManager.LoadScene("Victory");
     }
 
     // Update is called once per frame

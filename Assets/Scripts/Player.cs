@@ -16,24 +16,22 @@ public class Player : MonoBehaviour
 
     Vector3 movement;
     bool grounded;
-    int Health = 1;
+
 
     [SerializeField] PlayerStats myStats;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SceneManager.LoadScene("Title");
         controller = GetComponent<CharacterController>();
         Speed = myStats.moveSpeed;
         jumpForce = myStats.jumpForce;
         gravity = myStats.gravity;
-        Health = myStats.health;
     }
 
     public void Damage()
     {
-        Health--;
+        myStats.health--;
     }
 
     // Update is called once per frame 
@@ -92,10 +90,12 @@ public class Player : MonoBehaviour
 
         controller.Move(movement * Time.deltaTime);
 
-        if (Health == 0)
+        if(myStats.health == 0 || transform.position.y <= -5)
         {
             SceneManager.LoadScene("GameOver");
         }
+
+
     }
 
 }
